@@ -13,7 +13,7 @@ var addBinary = function(a, b) {
     console.log("the number a is " + parseInt(a, 2));
     console.log("the number b is " + parseInt(b, 2));
     console.log("the dec is  " + dec);
-    return dec.toString(2);
+    return dec.toString(2); 
 };
 var a = "10"
 var b = "110"

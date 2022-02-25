@@ -16,9 +16,9 @@ function sumFinder(arr, num) {
       diff = num - arr[i]
   
       if (obj[diff]) {
-        return true
+        return true;
       } else {
-        obj[arr[i]] = true
+        obj[arr[i]] = true;
       }
     }
     return false
