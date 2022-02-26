@@ -6,7 +6,8 @@ Input:
 // 1 + 2 = 3 and 3 +2 = 5 
 
 
-countTriplet(arr,n){
+countTriplet(arr,n)
+{
     //code here
     let triplets = 0;
     let i =0;
