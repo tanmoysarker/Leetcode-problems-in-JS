@@ -9,22 +9,17 @@
 // "coding", return true
 
 
+function correctCapitalization(str){
+    if (str == str.toUpperCase()) {
+  console.log('upper case true');
+        return true;
+     }else if ((str.substring(1) == str.substring(1).toLowerCase()) && (str.substring(0,1) == str.substring(0,1).toUpperCase()) ){
+         return true;
+     }else if (str == str.toLowerCase()){
+        return true;
+     }else return false;
+ }
+ correctCapitalization('coding');
 
-//Not the solution though
-var strings = 'MMM';
-var i=0;
-var character='';
-while (i <= strings.length){
-    character = strings.charAt(i);
-    if (!isNaN(character * 1)){
-        console.log('character is numeric');
-    }else{
-        if (character == character.toUpperCase()) {
-            console.log('upper case true');
-        }
-        if (character == character.toLowerCase()){
-            console.log('lower case true');
-        }
-    }
-    i++;
-}
+ // Time complexity: O(n)
+ // Space complexity: O(1)

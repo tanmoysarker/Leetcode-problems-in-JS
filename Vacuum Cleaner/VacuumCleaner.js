@@ -6,17 +6,29 @@
 // "URURD", return false
 // "RUULLDRD", return true
 
-function vacuumCleaner(moves){    
-    let x = 0,
-        y = 0;
-    
-    for(let i = 0; i < moves.length; i++) {
-      if(moves[i] === 'U') x++;
-      else if (moves[i] === 'D') x--;
-      else if (moves[i] === 'R') y++;
-      else if (moves[i] === 'L') y--;
+function vacuumCleaner (str){
+    let x = 0;
+    let y = 0;
+    for(let i = 0; i < str.length; i++){
+      if(str[i] === 'U'){
+        x++;
+      }else if(str[i] === 'D'){
+        x--;
+      }if (str[i] === 'R'){
+        y++;
+      }else if(str[i] === 'L'){
+        y--;
+      }
+      
     }
-    
-    return x === 0 & y === 0 ? true : false;
-  };
-  vacuumCleaner('UR');
+    console.log(x , y);
+    return x === 0 && y === 0 ? true : false ;
+}
+
+vacuumCleaner('RUULLDRD');
+
+// Big-O Analysis
+// Runtime: O(N) where N is the number of moves the vacuum makes
+// Space complexity: O(1) or constant as we only need a few variables to solve the problem regardless of the number of moves the vacuum makes
+
+

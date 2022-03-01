@@ -250,7 +250,7 @@ var searchRange = function(nums, target) {
       console.log(e.target.value);
   }, 1000);
 
-  // Implement this
+  // Implement call
 
   const calc = {
       total: 0,
@@ -270,3 +270,36 @@ var searchRange = function(nums, target) {
 
   const result = calc.add(10).multiply(5).subtract(2)
   console.log(result.total);
+
+  // forEach example
+
+  const items = [
+      { name: 'Rice', price: 5},
+      { name: 'Book', price: 25},
+      { name: 'Ckicken', price: 54},
+      { name: 'Monitor', price: 53},
+  ]
+
+  let totalPrice = 0;
+  items.forEach(item => {
+      totalPrice += item.price
+  })
+  console.log(totalPrice) //gives the total price
+
+  totalPrice = items.reduce((total, item)=> {
+    return total + item.price
+  }, 0)
+
+  console.log(totalPrice) //gives the total price
+
+
+  // syfe interview problem solution 
+
+  const transform = (arr, primaryKey) => [...arr.reduce((map, { [primaryKey]: key, ...e }) => {
+    const { [primaryKey]: k, ...props } = map.get(key) ?? {};
+    for(let prop in e) {
+      props[prop] = [...(props[prop] ?? []), e[prop]];
+    }
+    map.set(key, { [primaryKey]: key, ...props });
+    return map;
+  }, new Map).values()];

@@ -5,7 +5,7 @@ function reverseStr (str){
     }
     return revStr;
 }
-reverseStr('Cat');
+console.log(reverseStr('Cat'));
 
 //Another
 
