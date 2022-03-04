@@ -32,3 +32,16 @@ function longest_common_starting_substring(arr1){
     
         return prefix
     }
+
+
+// function longestCommon(arr){
+//     var str =''
+//     for (let i = 0; i < arr[0].length(); i++){
+//         var char = arr[0][i];
+//         for (let j = 1; j<arr[i].length; j++){
+//             if(arr[j][i] !== str) return str;
+//         }
+//         str = str + char
+//     }
+//     return str;    
+// }

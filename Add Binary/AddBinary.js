@@ -8,13 +8,42 @@
 // "1" + "0", return  "1"
 
 
-var addBinary = function(a, b) {
-    var dec = Number(parseInt(a, 2)) + Number(parseInt(b, 2));
-    console.log("the number a is " + parseInt(a, 2));
-    console.log("the number b is " + parseInt(b, 2));
-    console.log("the dec is  " + dec);
-    return dec.toString(2); 
-};
-var a = "10"
-var b = "110"
-console.log(addBinary(a, b));
+// var addBinary = function(a, b) {
+//     var dec = Number(parseInt(a, 2)) + Number(parseInt(b, 2));
+//     console.log("the number a is " + parseInt(a, 2));
+//     console.log("the number b is " + parseInt(b, 2));
+//     console.log("the dec is  " + dec);
+//     return dec.toString(2); 
+// };
+// var a = "10"
+// var b = "110"
+// console.log(addBinary(a, b));
+
+
+// Another
+
+function addBinary(a,b) {
+    var i = a.length() - 1;
+    var j = b.length() - 1;
+    var carry = 0;
+    while (i >= 0 || j >= 0) {
+        var sum = carry;
+        if (i >= 0) {
+            sum += a.charAt(i--) - '0';
+        }
+        if (j >= 0) {
+            sum += b.charAt(j--) - '0';
+        }
+
+        result.append(sum % 2);
+        carry = sum / 2;
+    }
+
+    if (carry != 0) {
+        result.append(1);
+    }
+
+    return result.reverse().toString();
+}
+
+addBinary("10","110");
