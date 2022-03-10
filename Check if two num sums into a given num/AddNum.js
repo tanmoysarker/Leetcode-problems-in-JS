@@ -61,3 +61,7 @@ function twoSum(nums, k) {
   return false;
 }
 twoSum([6, 4, 4, 2], 7);
+
+// Big-O Analysis
+// Runtime: O(N) where N is the number of integers in our list
+// Space complexity: O(N) because we use a hash map to store all N numbers in the worst case
