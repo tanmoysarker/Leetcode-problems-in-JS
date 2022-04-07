@@ -23,3 +23,20 @@ function calculateString(str) {
 }
     
 return calculateString(s) === calculateString(t);
+
+
+// Another
+
+var backspaceCompare = function(S, T) {
+    return backSpace(S) === backSpace(T)
+};
+
+const backSpace = (str) => {
+    const result = []
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charAt(i)
+        if (char !== '#') result.push(char)
+        else result.pop()
+    }
+    return result.join('')
+}
