@@ -27,7 +27,7 @@ return calculateString(s) === calculateString(t);
 
 // Another
 
-var backspaceCompare = function(S, T) {
+const backspaceCompare = (S, T) =>{
     return backSpace(S) === backSpace(T)
 };
 
@@ -40,3 +40,5 @@ const backSpace = (str) => {
     }
     return result.join('')
 }
+
+backspaceCompare("ABC#", "CD##AB");
