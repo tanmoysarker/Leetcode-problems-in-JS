@@ -23,5 +23,4 @@ function TreeNode(val) {
       return root;
   };
   
-  //test case
-  sortedArrayToBST([-10,-3,0,5,9]);// => a root node representing this tree: [0,-3,9,-10,null,5]
+  sortedArrayToBST([-10,-3,0,5,9]);
