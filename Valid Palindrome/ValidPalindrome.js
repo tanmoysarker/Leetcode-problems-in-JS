@@ -37,3 +37,18 @@ function palindrome(str) {
    }
    
    palindrome("level");
+
+
+// Another (For int )
+
+var isPalindrome = function(x) {
+    
+    const len = x.length;
+    
+    for (let i = 0; i < x/2; i++){
+        if (x[i] !== x[len - 1 - i]){
+            return false;
+        }
+        return true;
+    }
+};
