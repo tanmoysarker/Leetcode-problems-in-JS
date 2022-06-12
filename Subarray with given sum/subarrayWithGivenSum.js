@@ -27,3 +27,30 @@ subarraySum(arr, n, s)
            }
        }
     }
+
+// Another
+
+function subArrayWithGivenSum(arr, n, sum){
+
+    var currentSum = 0;
+
+    for (let i = 0; i < n; i++){
+        currentSum = arr[i];
+
+        for (let j = i+1; j< n ; j++){
+            if (currentSum === sum){
+                console.log(`Found between ${i} and ${j - 1}`)
+            }
+
+            if (currentSum > sum || j == n)
+            break;
+
+            currentSum =  currentSum + arr[j];
+
+        }
+    }
+    return;
+}
+
+// Nested loop is used to traverse the array so the time complexity is O(n^2)
+// Space Complexity: O(1). As constant extra space is required.
