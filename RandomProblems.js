@@ -303,3 +303,23 @@ var searchRange = function(nums, target) {
     map.set(key, { [primaryKey]: key, ...props });
     return map;
   }, new Map).values()];
+
+
+  // MetaDesignSolutions interview question
+
+  // Rotate an array n number of times using no method except push and pop
+
+  const original = [1,2,3,4,5];
+console.log(`original: [${
+  original}], rotated: [${
+    rotateLeft(original, 3)}]`);
+
+function rotateLeft(arr, n) {
+  // if you want to mutate the original arr
+  // omit cloning
+  const clone = [...arr];
+  while (n--) {
+    clone.push(clone.shift());
+  };
+  return clone;
+}
