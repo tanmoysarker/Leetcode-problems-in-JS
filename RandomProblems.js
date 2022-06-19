@@ -315,8 +315,8 @@ console.log(`original: [${
     rotateLeft(original, 3)}]`);
 
 function rotateLeft(arr, n) {
-  // if you want to mutate the original arr
-  // omit cloning
+  // if you want to mutate the original arr omit cloning
+  
   const clone = [...arr];
   while (n--) {
     clone.push(clone.shift());
