@@ -20,3 +20,10 @@ const singleNumber = (nums) => nums.reduce((a, b) => {
   console.log("b: ", b); //1,2,1,2,4
   return a ^ b;
 },0);
+
+
+// Another
+
+function singleNumber(nums) {
+	return nums.reduce((prev, curr) => prev ^ curr);
+}
