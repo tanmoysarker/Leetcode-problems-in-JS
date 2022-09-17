@@ -30,23 +30,19 @@ subarraySum(arr, n, s)
 
 // Another
 
-function subArrayWithGivenSum(arr, n, sum){
-
-    var currentSum = 0;
-
+function sumArr(arr,n,sum){
+    let curr_sum = 0;
+    
     for (let i = 0; i < n; i++){
-        currentSum = arr[i];
-
-        for (let j = i+1; j< n ; j++){
-            if (currentSum === sum){
-                console.log(`Found between ${i} and ${j - 1}`)
+        curr_sum = arr[i];
+        for (let j = i + 1; j < n; j++) {
+            if (curr_sum === sum){
+                console.log(`found between ${i} and ${j-1}`);
             }
-
-            if (currentSum > sum || j == n)
-            break;
-
-            currentSum =  currentSum + arr[j];
-
+            if (curr_sum > sum || j == n)
+             break;
+           curr_sum = curr_sum + arr[j] ;
+            
         }
     }
     return;
