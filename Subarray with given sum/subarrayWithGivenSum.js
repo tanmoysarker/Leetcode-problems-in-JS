@@ -39,8 +39,10 @@ function sumArr(arr,n,sum){
             if (curr_sum === sum){
                 console.log(`found between ${i} and ${j-1}`);
             }
-            if (curr_sum > sum || j == n)
-             break;
+            if (curr_sum > sum || j == n){
+                break;
+            }
+             
            curr_sum = curr_sum + arr[j] ;
             
         }
