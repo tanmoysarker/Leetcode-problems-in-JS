@@ -67,8 +67,7 @@ function countWays(arr,n)
 
     return ans;
 }
- 
-// Driver code
+
 let arr=[1, 2, 3, 4, 5];
 let n = arr.length;
 document.write(countWays(arr, n));
