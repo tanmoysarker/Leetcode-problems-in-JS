@@ -92,3 +92,35 @@ function processInput(arr) {
 
 const result = processInput(arr);
 console.log(result);
+
+
+//
+
+var arr = ['9549958593','9399938328'];
+var counterValue = 0;
+var status;
+
+function selectNumber(){
+    arr.map(x=> {
+        let arrays = x.split(' ');
+        arrays.map(y => {
+            if (count(y) > 2){
+                status = true;
+            }else {
+                status = false;
+            }
+            console.log(status);
+        })
+    })
+}
+function count(str){
+  var j = 1;
+  for (let i = 0; i < str.length; i++){
+      if (str[i] === str[j]){
+          counterValue += 1;
+      }
+      j++;
+  }
+  return counterValue;
+}
+selectNumber(arr);
