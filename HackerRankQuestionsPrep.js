@@ -95,3 +95,38 @@ function countingValleys(steps, path) {
     }
     return valley;
 }
+
+// A student is taking a cryptography class and has found anagrams to be very useful. Two strings are anagrams of each other if the first string's letters can be rearranged to form the second string. In other words, both strings must contain the same exact letters in the same exact frequency. For example, bacdc and dcbac are anagrams, but bacdc and dcbad are not.
+
+// The student decides on an encryption scheme that involves two large strings. The encryption is dependent on the minimum number of character deletions required to make the two strings anagrams. Determine this number.
+
+// Given two strings,  and , that may or may not be of the same length, determine the minimum number of character deletions required to make  and  anagrams. Any characters can be deleted from either of the strings.
+// abcdefg
+// abczy
+
+// 2 * (5 - 3) + (7 - 5) = 4
+
+function makeAnagram (a, b){
+    const larger = a.length >= b.length ? a : b;
+    const smaller = a.length < b.length ? a : b;
+
+    const storage = {};
+
+    for (const letter of larger){
+        storage[letter] = (storage[letter] || 0) + 1;
+    }
+
+    let counter = 0;
+
+    for (const letter of smaller){
+        if (storage[letter] && storage[letter] > 0){
+            storage[letter]--;
+            counter++;
+        }
+    }
+
+    const diff_of_smaller = (smaller.length - counter);
+    const diff_of_larger = (larger.length - smaller.length);
+
+    return (2 * diff_of_smaller) + diff_of_larger ;
+}
