@@ -156,3 +156,59 @@ function alternativeCharacters(){
     
     return result; 
 }
+
+// Sherlock considers a string to be valid if all characters of the string appear the same number of times. It is also valid if he can remove just  character at  index in the string, and the remaining characters will occur the same number of times. Given a string , determine if it is valid. If so, return YES, otherwise return NO.
+
+function isValid(s) {
+    let hash = {};
+    let max, min;
+    let minCount = 0;
+    let maxCount = 0;
+    
+    //Get frequencies of characters
+    for (let i = 0; i<s.length; i++){
+        let key = s[i];
+        if(hash[key]){
+            console.log(hash);
+            hash[key]++;
+        }else{
+            hash[key] = 1;
+        }
+    }
+        //Push all strings to an array
+        let frequencies = Object.values(hash);
+        frequencies.sort();
+        min = frequencies[0];
+        max = frequencies[frequencies.length - 1];
+        console.log(frequencies);
+        
+        // Get the number of max and in for the frequency
+        for(let i = 0; i < frequencies.length; i++){
+            if(frequencies[i] === max){
+                maxCount++;
+            }
+            if(frequencies[i] === min){
+                minCount++;
+            }
+        }
+          console.log('min',minCount);
+          console.log('max',maxCount);
+        if (min === max){
+            return 'YES';
+        }
+        if (max - (min - 1) == max && minCount === 1 && maxCount !== 1){
+            return 'YES';
+        }
+        if (max - min !== 1){
+            return 'NO';
+        }
+        if (minCount === maxCount){
+            return 'NO';
+        }
+        if (minCount === 1 || maxCount === 1){
+            return 'YES';
+        }
+        return 'NO'
+    
+}
+isValid('abcc');
