@@ -212,3 +212,51 @@ function isValid(s) {
     
 }
 isValid('abcc');
+
+
+
+// A string is said to be a special string if either of two conditions is met:
+
+// All of the characters are the same, e.g. aaa.
+// All characters except the middle one are the same, e.g. aadaa.
+// A special substring is any substring of a string which meets one of those criteria. Given a string, determine how many special substrings can be formed from it.
+
+// s= mnonopoo
+// Output =  {m, n, o, n, o, p, o, o, non, ono, opo, oo}
+
+
+function substrCount(n, s) {
+    let result = 0;
+     let i = 0;
+     // 1st case, all letters are the same
+     while(i < n) {
+         let charCount = 1;
+         while (i + 1 < s.length && s[i] == s[i+1]) {
+             
+             i++;
+             charCount++;
+         }
+     console.log('charCount',charCount)
+         result += parseInt((charCount * (charCount + 1)) / 2);
+         console.log(result)
+         i++;
+     }
+     // 2nd case, palindrome
+     for (i=1; i<n; i++) {
+         let charCount = 1
+         while (
+             i + charCount < s.length &&
+             i - charCount >= 0 &&
+             s[i-1] != s[i] &&
+             s[i-1] == s[i-charCount] &&
+             s[i-1] == s[i+charCount]
+         ) {
+             charCount ++;
+         }
+    
+         result += charCount - 1
+     }
+     return result
+    }
+    
+    substrCount(4, 'aaaa');
